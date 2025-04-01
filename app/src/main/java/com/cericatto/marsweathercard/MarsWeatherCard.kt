@@ -68,7 +68,7 @@ fun MarsWeatherCard(
 	modifier: Modifier
 ) {
 	val configuration = LocalConfiguration.current
-	val screenHeight = (configuration.screenHeightDp * 0.4).dp
+	val screenHeight = (configuration.screenHeightDp * 0.5).dp
 	Column(
 		verticalArrangement = Arrangement.Center,
 		horizontalAlignment = Alignment.Start,
@@ -128,7 +128,8 @@ private fun IconText(
 		Icon(
 			painter = painterResource(icon),
 			contentDescription = contentDescription,
-			modifier = Modifier.size(15.dp)
+			modifier = Modifier.size(15.dp),
+			tint = textColor
 		)
 		Text(
 			text = text,
@@ -156,14 +157,16 @@ private fun RowScope.TextUppercase(
 			text = temperature,
 			style = TextStyle(
 				fontSize = 50.sp,
-				fontWeight = FontWeight.Medium
+				fontWeight = FontWeight.Medium,
+				color = Color(0xFF14171E)
 			),
 			modifier = Modifier.padding(start = 10.dp)
 		)
 		Text(
 			text = "ºC",
 			style = TextStyle(
-				fontSize = 20.sp
+				fontSize = 20.sp,
+				color = Color(0xFF14171E)
 			),
 			modifier = Modifier.padding(start = 5.dp, top = 5.dp)
 		)
@@ -187,14 +190,16 @@ private fun RowScope.TemperatureColumn(
 		Text(
 			text = high,
 			style = TextStyle(
-				fontSize = 12.sp
+				fontSize = 12.sp,
+				color = Color(0xFF14171E)
 			),
 			modifier = Modifier.padding(start = 10.dp)
 		)
 		Text(
 			text = low,
 			style = TextStyle(
-				fontSize = 12.sp
+				fontSize = 12.sp,
+				color = Color(0xFF14171E)
 			),
 			modifier = Modifier.padding(start = 10.dp, top = 5.dp)
 		)
@@ -214,7 +219,7 @@ private fun MarsCard(
 	LazyVerticalGrid(
 		columns = GridCells.Fixed(2), // Sets 2 columns
 		modifier = Modifier
-			.padding(top = 10.dp)
+			.padding(top = 20.dp)
 			.fillMaxSize()
 			.padding(3.dp),
 		verticalArrangement = Arrangement.spacedBy(10.dp),
@@ -255,7 +260,8 @@ private fun MarsSmallCard(
 			text = subtitle,
 			style = TextStyle(
 				fontSize = 16.sp,
-				fontWeight = FontWeight.Medium
+				fontWeight = FontWeight.Medium,
+				color = Color(0xFF14171E)
 			),
 			modifier = Modifier.padding(top = 5.dp)
 		)
